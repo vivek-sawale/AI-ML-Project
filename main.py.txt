@@ -1,0 +1,39 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, confusion_matrix
+np.random.seed(42)
+sleep_hr = np.random.randint(4, 10, 120)
+study_hr = np.random.randint(2, 12, 120)
+gym_min = np.random.randint(0, 60, 120)
+stress_label = []
+for i in range(120):
+    val = (10 - sleep_hr[i]) + (study_hr[i] // 2)
+    if val > 8: 
+        stress_label.append(2)
+    elif val > 5: 
+        stress_label.append(1)
+    else: 
+        stress_label.append(0)
+df = pd.DataFrame({'Sleep': sleep_hr, 'Study': study_hr, 'Gym': gym_min, 'Target': stress_label})
+X = df[['Sleep', 'Study', 'Gym']]
+y = df['Target']
+x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+model = RandomForestClassifier(n_estimators=100)
+model.fit(x_train, y_train)
+preds = model.predict(x_test)
+acc = accuracy_score(y_test, preds)
+
+print("---------------------------------")
+print(f"Project Model Accuarcy: {acc * 100}%") 
+print("---------------------------------")
+test_case = [[5, 11, 0]]
+ans = model.predict(test_case)
+print(f"Prediction for a tired student: {ans[0]}")
+cm = confusion_matrix(y_test, preds)
+sns.heatmap(cm, annot=True, cmap='Blues')
+plt.title('Stress Model Resultes')
+plt.show()
