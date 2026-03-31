@@ -1,43 +1,80 @@
-# AI-ML# Student Performance Prediction Using Machine Learning
+Project Overview
 
-## About Project
+Student stress is a common problem in academic environments. Factors like academic pressure, lack of sleep, assignments, exams, and screen time can significantly affect students' mental well-being.
 
-This project predicts student marks using machine learning.
-It uses study hours, sleep hours and attendance to predict marks.
+This project focuses on building a Machine Learning model that predicts student stress levels based on various academic and lifestyle factors. The goal is to identify stress early and help students manage their academic workload more effectively.
 
-## Problem Statement
+Objectives
+To analyze factors affecting student stress
+To build a predictive model using Machine Learning
+To classify students based on stress levels
+To help improve student well-being and academic performance
+ Problem Statement
 
-Students want to know their expected marks before exams.
-This project helps to predict student performance.
+Students often face academic pressure which leads to stress and affects their performance. This project aims to predict student stress level using different parameters such as study hours, sleep hours, assignments, and exam pressure.
 
-## Tools Used
+ Dataset Features
 
-* Python
-* Pandas
-* Scikit-learn
-* Google Colab
+The dataset includes the following attributes:
 
-## Dataset
+Study Hours
+Sleep Hours
+Attendance
+Assignments Load
+Exam Pressure
+Screen Time
+Academic Performance
+Stress Level (Target Variable)
+ Technologies Used
+Python
+Machine Learning
+Pandas
+NumPy
+Matplotlib
+Scikit-learn
+Jupyter Notebook / Google Colab
+ Machine Learning Algorithms Used
+Linear Regression
+Decision Tree
+Random Forest
+Logistic Regression (Optional)
+ Project Workflow
+Data Collection
+Data Preprocessing
+Data Visualization
+Model Training
+Model Testing
+Prediction
+Result Analysis
 
-Dataset contains:
+Expected Outcome
 
-* Study Hours
-* Sleep Hours
-* Attendance
-* Marks
+The system will predict whether a student has:
 
-## How to Run
+Low Stress
+Medium Stress
+High Stress
 
-1. Open notebook file
-2. Run all cells
-3. Enter values
-4. Get predicted marks
+This prediction can help identify students who may need support.
 
-## Output
+Applications
+Educational Institutions
+Student Counseling
+Academic Planning
+Mental Health Awareness
 
-Predicted student marks
+Future Improvements
+Use larger datasets
+Add real-time data collection
+Improve model accuracy
+Create a web interface
 
-## Author
+ Author
 
-Vivek Sumant Sawale
-VIT Bhopal University
+Vivek Sawale
+AI & ML Project
+Predictor of Student Stress Using Machine Learning
+
+Conclusion
+
+This project demonstrates how Machine Learning can be used to predict student stress levels. It helps in early detection of stress and supports better academic performance and student well-being
