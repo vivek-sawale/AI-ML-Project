@@ -1,0 +1,57 @@
+print("Student Stress Predictor")
+print("------------------------")
+
+# Take Input
+study = float(input("Enter Study Hours: "))
+sleep = float(input("Enter Sleep Hours: "))
+attendance = float(input("Enter Attendance (%): "))
+assignments = float(input("Enter Assignments: "))
+exam = float(input("Enter Exam Pressure (1-10): "))
+screen = float(input("Enter Screen Time: "))
+performance = float(input("Enter Performance: "))
+
+# Simple Logic
+stress_score = 0
+
+if study > 6:
+    stress_score += 2
+elif study > 4:
+    stress_score += 1
+
+if sleep < 5:
+    stress_score += 2
+elif sleep < 7:
+    stress_score += 1
+
+if attendance < 65:
+    stress_score += 2
+elif attendance < 75:
+    stress_score += 1
+
+if assignments > 5:
+    stress_score += 2
+elif assignments > 3:
+    stress_score += 1
+
+if exam > 7:
+    stress_score += 2
+elif exam > 5:
+    stress_score += 1
+
+if screen > 6:
+    stress_score += 1
+
+if performance < 60:
+    stress_score += 2
+elif performance < 70:
+    stress_score += 1
+
+# Prediction
+if stress_score <= 4:
+    result = "Low"
+elif stress_score <= 8:
+    result = "Medium"
+else:
+    result = "High"
+
+print("\nPredicted Stress Level:", result)
